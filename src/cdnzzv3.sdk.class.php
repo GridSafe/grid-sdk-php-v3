@@ -123,8 +123,8 @@ class CDNZZAPI
         return $this->postRequest("FetchVerifyInfo", array('domain' => $domain));
     }
 
-    public function verifyDomain($domain, $verify_type){
-        return $this->postRequest("VerifyDomain", array('domain' => $domain, 'verify_type' => $verify_type));
+    public function verifyDomain($domain){
+        return $this->postRequest("VerifyDomain", array('domain' => $domain));
     }
 
     public function addSubDomain($domain, $host, $type, $value){

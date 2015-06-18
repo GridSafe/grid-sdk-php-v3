@@ -52,10 +52,7 @@ print_r($result);
 assert($result["domain"] == $domain);
 assert(!empty($result["dns_txt_record"]));
 
-$result = $zzapi->verifyDomain($domain, "dns");
-print_r($result);
-assert($result["domain"] == $domain);
-$result = $zzapi->verifyDomain($domain, "file");
+$result = $zzapi->verifyDomain($domain);
 print_r($result);
 assert($result["domain"] == $domain);
 
