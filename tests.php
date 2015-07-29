@@ -3,7 +3,7 @@ require_once "./src/cdnzzv3.sdk.class.php";
 require_once "./src/config.inc.php";
 
 $user_email = "apitest@cdnzz.com";
-$user_secretkey = "3388b365b1eab03dfd68c578c8fee5fb";
+$user_secretkey = "ae5f9bd020556e3cc0ae4fa24b404456";
 
 function RandomString($len=6)
 {
@@ -103,3 +103,13 @@ assert($result["url"] == $url);
 $result = $zzapi->purgeCache($domain, $url);
 print_r($result);
 assert($result["url"] == $url);
+
+
+$domain = "api-test.com";
+$zzapi->fetchBandwidth($domain, 'bandwidth');
+$res = $zzapi->fetchBandwidth($domain, 'bandwidth', '20150701', '20150710');
+print_r($res);
+
+$zzapi->fetchTraffic($domain, 'traffic');
+$res = $zzapi->fetchTraffic($domain, 'traffic', '20150701', '20150710');
+print_r($res);

@@ -161,4 +161,22 @@ class CDNZZAPI
     public function purgeCache($domain, $url){
         return $this->postRequest("PurgeCache", array('domain' => $domain, 'url' => $url));
     }
+
+    public function fetchBandwidth($domain, $sub_name, $start_day=null, $end_day=null){
+        return $this->postRequest("FetchBandwidth", array(
+            'domain' => $domain,
+            'sub_name' => $sub_name,
+            'start_day' => $start_day,
+            'end_day' => $end_day
+            ));
+    }
+
+    public function fetchTraffic($domain, $sub_name, $start_day=null, $end_day=null){
+        return $this->postRequest("FetchTraffic", array(
+            'domain' => $domain,
+            'sub_name' => $sub_name,
+            'start_day' => $start_day,
+            'end_day' => $end_day
+            ));
+    }
 }
